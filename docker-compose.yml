@@ -1,0 +1,13 @@
+app: 
+  build: .
+  command: node bin/www.js
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - '31337:3000'
+  environment:
+    DB_HOST: db
+  links:
+    - db
+db:
+  image: mongo:2.6
